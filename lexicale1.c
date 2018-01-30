@@ -5,6 +5,20 @@
 #include "symboles.h"
 #define Taille // variable globale dont la taille du tableau de caracteres et de noms
 
+
+// fonction permettant d'ajouter un caractere et de le relier avec son nom si variable ou fonction
+void AddTableau( int tab[Taille]){
+	int tabnom[Taille]; // tableau de noms de variables et de fonctions codées soit par 26 soit par 27
+	int i, j=0;
+	tab = (int *) realloc(tab, 1024); // modification de la taille du tableau de caractere tout en conservant le contenu initial
+	for(i = 0; i< Taille ; i++){
+		if( tab[i] == 26 || tab[i] == 27 ){
+			tab[i] = tabnom[j];
+			j++;
+		}
+	}
+}
+
 /**set buffer array to 0**/
 void initBuffer(char * buf){
 	int i;
@@ -24,6 +38,10 @@ FILE *file;
 file = fopen("L.txt", "r");
 if (file) {
     while ((c = getc(file)) != EOF){
+	    // appel à la fonction AddTbleau
+	    if(i < Taille ){
+			AddTableau(// j'ai un souci avec le type int du parametre??
+		}
         if (isalpha(c)){
 			puts("it's a letter(to buffer)");
 			buffer[i]=c;
