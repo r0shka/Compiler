@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "symboles.h"
+// #define Taille 1024
 
 /**set buffer array to 0**/
 void initBuffer(char * buf){
@@ -10,8 +11,13 @@ void initBuffer(char * buf){
 	for(i=0; i<64; i++)
 		buf[i]=0;
 }
+/* 
+void addtableau( int tab[Taille]){
 
+}
  
+ 
+ */
 int main( void )
 {
 int c, 
