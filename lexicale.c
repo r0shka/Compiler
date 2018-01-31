@@ -37,6 +37,7 @@ FILE *file;
 file = fopen("L", "r");
 if (file) {
     while ((c = getc(file)) != EOF){
+		printf("%d\n",c);
 	    // appel à la fonction AddTbleau
 	    /**if(i > TAILLE-1 ){
 			AddTableau(tabID);
@@ -48,8 +49,10 @@ if (file) {
 		}
 		else if (isdigit(c))
 			puts("NOMBRE");
-		/**else if(c==32)
-			puts(" ");**/
+		else if(c==32){
+			if(!strcmp(buffer, "si " ))
+				puts("SI");
+		}
 		else if(c==43){	//	+
 			if(buffer[0]!=0){
 				printf("%s\n", buffer );
@@ -93,7 +96,8 @@ if (file) {
 		}
 		else if(c==40){	//	(
 			if(buffer[0]!=0){
-				printf("b%s\n", buffer );
+				puts("ID_FCT");
+				printf("%s\n", buffer );
 				i=0;
 				initBuffer(buffer);
 			}
