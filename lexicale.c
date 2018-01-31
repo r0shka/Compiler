@@ -48,7 +48,7 @@ if (file) {
 		}
 		else if (isdigit(c))
 			puts("NOMBRE");
-		else if(c==32){
+		else if(c==32){	//space
 			if(!strcmp(buffer, "si" )){
 				puts("SI");
 				i=0;
@@ -73,9 +73,16 @@ if (file) {
 		}
 		else if(c==123){	//	{
 			if(buffer[0]!=0){
-				printf("%s\n", buffer );
-				i=0;
-				initBuffer(buffer);
+				if(!strcmp(buffer, "alors" ) || !strcmp(buffer, "alors " )){
+					puts("ALORS");
+					i=0;
+					initBuffer(buffer);
+				}
+				if(!strcmp(buffer, "sinon" ) || !strcmp(buffer, "sinon " )){
+					puts("SINON");
+					i=0;
+					initBuffer(buffer);
+				}
 			}
 			puts("ACCOLADE_OUVRANTE");
 		}
