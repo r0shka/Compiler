@@ -1,7 +1,0 @@
-inc(entier $a)
-entier $c, entier $b;
-{
-$c = $a+1;
-si 7 alors{ blabla() } sinon{bleble()};
-retour $c;
-}
